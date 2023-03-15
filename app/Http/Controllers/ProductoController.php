@@ -49,23 +49,23 @@ class ProductoController extends Controller
         return view('productos.edit', compact("producto"));
     }
 
-    public function update(Request $request, Producto $producto)
+    public function update(StoreProducto $request)
     {
 
-        $request->validate([
+       /*  $request->validate([
             'nombre'=> 'required',
             'marca'=> 'required',
             'descripcion' => 'required'
         ]);
-
+ */
         /* $producto->nombre = $request->nombre;
         $producto->categoria = $request->categoria;
         $producto->marca = $request->marca;
         $producto->descripcion = $request->descripcion;
 
         $producto->save(); */
-
-        $producto->update($request->all());
+        Producto::update($request->validate());
+        
 
         return redirect()->route('productos.show', $producto);
     }

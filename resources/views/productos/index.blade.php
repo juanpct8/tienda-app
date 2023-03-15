@@ -10,7 +10,7 @@
         @foreach ($productos as $producto )
 
             <li>
-                <a href="{{route('productos.show', $producto->id)}}">{{$producto->nombre}}</a>
+                <a href="{{route('productos.show', $producto)}}">{{$producto->nombre}}</a>
             </li>
             
         @endforeach
