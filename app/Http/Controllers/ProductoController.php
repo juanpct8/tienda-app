@@ -49,7 +49,7 @@ class ProductoController extends Controller
         return view('productos.edit', compact("producto"));
     }
 
-    public function update(StoreProducto $request)
+    public function update(StoreProducto $request, Producto $producto)
     {
 
        /*  $request->validate([
@@ -64,7 +64,7 @@ class ProductoController extends Controller
         $producto->descripcion = $request->descripcion;
 
         $producto->save(); */
-        Producto::update($request->validate());
+        $producto->update($request->validate());
         
 
         return redirect()->route('productos.show', $producto);
