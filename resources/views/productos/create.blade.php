@@ -3,8 +3,8 @@
 @section("title", "Crear")
 
 @section("content")
-    <h4>este es la pagina create</h4>
-    <form action="{{route('productos.store')}}" method="POST">
+<h4>este es la pagina create</h4>
+<form action="{{route('productos.store')}}" method="POST">
 
         @csrf
 
