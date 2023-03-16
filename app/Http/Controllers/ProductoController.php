@@ -30,7 +30,9 @@ class ProductoController extends Controller
 
         $producto->save(); */
         
-        $producto = Producto::create ($request->all());
+        $producto = Producto::create($request->validated()); 
+
+//        Producto::created($request->validated());
 
         session()->flash('status', 'El producto se agruego correctamente');
 
@@ -64,7 +66,7 @@ class ProductoController extends Controller
         $producto->descripcion = $request->descripcion;
 
         $producto->save(); */
-        $producto->update($request->validate());
+        $producto->update($request->all());
         
 
         return redirect()->route('productos.show', $producto);
