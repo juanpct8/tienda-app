@@ -14,14 +14,14 @@
                 <div class="mx-auto">
                     <div class="flex space-x-4">
                         <a href="{{route('inicio')}}"
-                           class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('home') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                           class="px-3 py-2 text-sm font-medium rounded-md hover:text-purple-600 dark:hover:text-white {{ request()->routeIs('inicio') ? 'text-purple-600 dark:text-white' : 'text-slate-400' }}">
                             Inicio
                         </a>
-                        <a href="{{ route('productos.index') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('posts.*') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                        <a href="{{ route('productos.index') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-purple-600 dark:hover:text-white {{ request()->routeIs('productos.*') ? 'text-purple-600 dark:text-white' : 'text-slate-400' }}">
                             Productos
                         </a>
                         
-                        <a href="{{ route('contacto') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('contact') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                        <a href="{{ route('contacto') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-purple-600 dark:hover:text-white {{ request()->routeIs('contacto') ? 'text-purple-600 dark:text-white' : 'text-slate-400' }}">
                             Contacto
                         </a>
                     </div>

@@ -3,7 +3,7 @@
 @section("title", "Crear")
 
 @section("content")
-<h4>este es la pagina create</h4>
+<h1 class="my-4 font-serif text-3xl text-center text-purple-600 dark:text-purple-500">este es la pagina create</h1>
 <form action="{{route('productos.store')}}" method="POST">
 
         @csrf
