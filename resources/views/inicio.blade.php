@@ -1,6 +1,8 @@
-@extends("layouts.plantilla")
+@extends("layouts.app")
 
-@section("title", "incio")
+@section("title", "inicio")
+
+@section('meta-description', 'inicio')
 
 @section("content")
 
