@@ -3,40 +3,26 @@
 @section("title","producto ".$producto->nombre)
 
 @if (session('status'))
-  <div class="status">
-    {{session('status')}}
+  <div class="max-w-screen-xl px-3 py-2 mx-auto font-bold text-white sm:px-6 lg:px-8 bg-emerald-500 dark:bg-emerald-700">
+    {{ session('status') }}
   </div>
 @endif
 
-
-
-
 @section("content")
-    <h1>Este producto es {{$producto->nombre}}</h1>
-    <p><strong>Marca: </strong>{{$producto->marca}}</p>
-    <p><strong>Categoria: </strong>{{$producto->categoria}}</p>
-    <p>{{$producto->descripcion}}</p>
-    <a href="{{route('productos.index')}}">Volver a productos</a>
-    <a href="{{route('productos.edit', $producto)}}">Editar producto</a>
-    <form action="{{route('productos.destroy', $producto)}}" method="post">
-        @method('delete')
-        @csrf
-        <button type="submit" class="btn btn-danger">Eliminar</button></form>
-    </form>
-
-  {{--   <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{$producto->nombre}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{$producto->marca}}</h6>
-          <p class="card-text">{{$producto->descripcion}}</p>
-          <a href="{{route('productos.edit', $producto)}}" class="card-link">Editar</a>
-          
-          <a href="{{route('productos.destroy', $producto)}}" class="btn btn-danger" method="post">Eliminar</a>
-          
+    <h1 class="my-4 font-serif text-3xl text-center text-purple-600 dark:text-purple-500">Este producto es {{$producto->nombre}}</h1>
+    <div class="flex flex-col max-w-xl px-8 py-4 mx-auto bg-white rounded shadow h-96 dark:bg-slate-800">
+      <p class="flex-1 leading-normal text-slate-600 dark:text-slate-400"><strong>Marca: </strong>{{$producto->marca}}</p>
+      <p class="flex-1 leading-normal text-slate-600 dark:text-slate-400"><strong>Categoria: </strong>{{$producto->categoria}}</p>
+      <p class="flex-1 leading-normal text-slate-600 dark:text-slate-400">{{$producto->descripcion}}</p>
+      <div class="flex justify-between">
+        <a class="inline-flex items-center text-xs font-semibold tracking-widest text-center uppercase transition duration-150 ease-in-out dark:text-slate-400 text-slate-500 hover:text-slate-600 dark:hover:text-slate-500 focus:outline-none focus:border-slate-200" href="{{route('productos.index')}}">Volver a productos</a>
+        <a  class="inline-flex items-center text-xs font-semibold tracking-widest text-center uppercase transition duration-150 ease-in-out dark:text-slate-400 text-slate-500 hover:text-slate-600 dark:hover:text-slate-500 focus:outline-none focus:border-slate-200" href="{{route('productos.edit', $producto)}}">Editar producto</a>
+        <form action="{{route('productos.destroy', $producto)}}" method="post">
             @method('delete')
             @csrf
-               
-        </div>
-      </div> --}}
-
+            <button type="submit" class="inline-flex items-center text-xs font-semibold tracking-widest text-center text-red-500 uppercase transition duration-150 ease-in-out dark:text-red-500/80 hover:text-red-600 focus:outline-none">Eliminar</button>
+        </form>
+      </div>  
+    </div>
+    
 @endsection

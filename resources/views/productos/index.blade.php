@@ -3,38 +3,18 @@
 @section("title" , "productos")
 
 @section("content")
-    <h3> es la pagina principal de productos </h3>
+    <header class="px-6 py-4 space-y-2 text-center">
+        <h1 class="font-serif text-3xl text-purple-600 dark:text-purple-500"> Productos </h1>
+        <a class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-center text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md dark:text-purple-200 bg-purple-800 hover:bg-purple-700 active:bg-purple-900 focus:outline-none focus:border-purple-900 focus:shadow-outline-sky" href="{{ route('productos.create') }}">Crear un nuevo producto</a>
+        <main class="grid w-full gap-4 px-4 max-w-7xl sm:grid-cols-2 md:grid-cols-3">
     
-    <a href="{{route('productos.create')}}">Nuevo producto</a>
-    <ul>
-        @foreach ($productos as $producto )
-
-            <li>
-                <a href="{{route('productos.show', $producto)}}">{{$producto->nombre}}</a>
-            </li>
-            
-        @endforeach
-    </ul> 
+            @foreach ($productos as $producto )
+                <div class="max-w-3xl px-4 py-2 space-y-4 bg-white rounded shadow dark:bg-slate-800">
+                    <h2 class="text-xl text-slate-600 dark:text-slate-300 hover:underline">
+                        <a href="{{route('productos.show', $producto)}}">{{$producto->nombre}}</a>
+                    </h2>
+                </div>
+            @endforeach
+        </main>
     {{$productos->links()}}
 @endsection 
-
-{{-- {{$productos->links()}}
-    <div class="container px-3">
-        <div class="row row-cols-3">
-            @foreach ($productos as $producto)
-                <div class="col p-3 border bg-white">
-                    <div class="card col border bg-light" style="width: 18rem;">
-                        <div class="card-body">
-                            <a href="{{route('productos.show', $producto)}}" class="card-title"><h5>{{$producto->nombre}}</h5></a>
-                            <h6 class="card-subtitle mb-2 text-muted">{{$producto->marca}}</h6>
-                            <p class="card-text">{{Str::limit($producto->descripcion, 80)}}</p>
-                        </div>
-                    </div>
-                </div>    
-            @endforeach
-        </div>
-    </div> --}}
-    
-
-
-
