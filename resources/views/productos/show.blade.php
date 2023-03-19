@@ -2,11 +2,7 @@
 
 @section("title","producto ".$producto->nombre)
 
-@if (session('status'))
-  <div class="max-w-screen-xl px-3 py-2 mx-auto font-bold text-white sm:px-6 lg:px-8 bg-emerald-500 dark:bg-emerald-700">
-    {{ session('status') }}
-  </div>
-@endif
+
 
 @section("content")
     <h1 class="my-4 font-serif text-3xl text-center text-purple-600 dark:text-purple-500">Este producto es {{$producto->nombre}}</h1>

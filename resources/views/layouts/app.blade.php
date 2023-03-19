@@ -9,7 +9,7 @@
     <meta name="description" content="@yield('meta-description', "")" />
 </head> 
 <body class="antialiased bg-slate-100 dark:bg-slate-900">
-    @include('layouts.partials.navigation')
+@include('layouts.partials.navigation')
     @yield('content')
 </body>
 </html>
