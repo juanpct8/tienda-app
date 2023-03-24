@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=>['index','show']]);
+    }
+
     public function index()
     {
 
@@ -77,4 +82,6 @@ class ProductoController extends Controller
 
         return redirect()->route('productos.index');
     }
+
+
 }

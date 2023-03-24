@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('productos', ProductoController::class);
 Route::get("/", InicioController::class)->name("inicio");
 Route::view('contacto', 'contacto')->name('contacto');
-
-
+Route::view('login', 'auth.login')->name('login');
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
 
