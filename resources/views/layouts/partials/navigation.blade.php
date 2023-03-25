@@ -26,13 +26,24 @@
                 </div>
                     <div class="ml-auto">
                         <div class="flex space-x-4">
-                        <a href="{{ route('login') }}" 
-                        class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-purple-600 dark:hover:text-white {{ request()->routeIs('login') ? 'text-purple-600 dark:text-white' : 'text-slate-400' }}">
-                                    Login
+                            @guest
+                            <a href="{{ route('login') }}"
+                               class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-purple-600 dark:hover:text-white {{ request()->routeIs('login') ? 'text-purple-600 dark:text-white' : 'text-slate-400' }}">
+                                Login
                             </a>
+                            @endguest
+                            @auth
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <a href="#"
+                                   class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-purple-600 dark:hover:text-white text-slate-400"
+                                   onclick="this.closest('form').submit()"
+                                >Logout</a>
+                            </form>
+                             @endauth
                         </div>
                     </div>
             </div>
         </div>
     </div>
-</nav>               
+</nav>              

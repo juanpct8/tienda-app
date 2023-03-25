@@ -35,5 +35,6 @@ Route::get("/", InicioController::class)->name("inicio");
 Route::view('contacto', 'contacto')->name('contacto');
 Route::view('login', 'auth.login')->name('login');
 Route::post('login', [AuthenticatedSessionController::class, 'store']);
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 
